@@ -26,6 +26,8 @@ export default class HashMap {
   }
 
   set(key, value) {
+    if (this.#capacity * this.#loadFactor < this.length()) this.#capacity *= 2;
+
     const index = this.#hash(key);
     const buckets = this.#buckets;
 
