@@ -66,4 +66,19 @@ export default class HashMap {
     }
     return false;
   }
+
+  remove(key) {
+    const index = this.#hash(key);
+    const buckets = this.#buckets;
+
+    this.#tryAccess(index);
+    for (const bucket in buckets[index]) {
+      if (buckets[index][bucket][0] === key) {
+        buckets[index].splice(bucket, 1);
+        if (!buckets[index].length) buckets.splice(index, 1);
+        return true;
+      }
+    }
+    return false;
+  }
 }
