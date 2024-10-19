@@ -55,4 +55,15 @@ export default class HashMap {
     }
     return null;
   }
+
+  has(key) {
+    const index = this.#hash(key);
+    const buckets = this.#buckets;
+
+    this.#tryAccess(index);
+    for (const bucket in buckets[index]) {
+      if (buckets[index][bucket][0] === key) return true;
+    }
+    return false;
+  }
 }
