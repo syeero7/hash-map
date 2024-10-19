@@ -89,4 +89,16 @@ export default class HashMap {
   clear() {
     this.#buckets = [];
   }
+
+  keys() {
+    return this.#buckets.flat().map((bucket) => bucket[0]);
+  }
+
+  values() {
+    return this.#buckets.flat().map((bucket) => bucket[1]);
+  }
+
+  entries() {
+    return this.#buckets.flat();
+  }
 }
