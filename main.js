@@ -1,4 +1,5 @@
 import HashMap from "./HashMap.js";
+import HashSet from "./HashSet.js";
 
 const test = new HashMap(16, 0.75);
 // test.set("xd", "ko");
@@ -35,3 +36,28 @@ console.log(test.length());
 // console.log(test.values());
 console.log(test.entries());
 console.log(test.get("apple"));
+
+console.log("----------------------------------------------------------------");
+
+const hash = new HashSet(16, 0.75);
+
+hash.set("apple");
+hash.set("yellow");
+hash.set("hat");
+hash.set("cap");
+hash.set("green");
+hash.set("red");
+hash.set("blue");
+hash.set("black");
+hash.set("white");
+hash.set("pink");
+hash.set("cat");
+hash.set("dog");
+hash.set("fish");
+hash.set("duck");
+hash.remove("cap");
+console.log(hash.length());
+console.log(hash.keys());
+console.log(hash.get("hat"));
+console.log(hash.has("gray"));
+console.log(hash.has("cat"));
